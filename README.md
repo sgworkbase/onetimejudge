@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OneTimeJudge 🌡️
 
-## Getting Started
+## プロジェクト概要
+**"Environmental Auth PoC"**
+現在の「気温」を一時的なパスコードとして利用する、環境依存型の認証システムの実証実験（PoC）アプリケーションです。
 
-First, run the development server:
+ユーザーが入力した気温と、外部気象APIから取得した実測値を照合し、誤差の範囲内であれば認証成功とみなします。
+
+## 🚀 デモ (Demo)
+動作デモはこちら:
+
+## 🛠 技術スタック (Tech Stack)
+モダンなフロントエンド技術を採用し、サーバーレス構成で構築しています。
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **API:** Open-Meteo API (天気情報取得)
+- **Deployment:** Vercel
+
+## ✨ 主な機能
+1. **Top画面:** ユーザーによる気温（パスコード）入力
+2. **判定画面:**
+   - クライアントサイドでの動的なステータス管理
+   - Loading / Success / Fail のUI切り替え
+   - 外部APIとの非同期通信 (Async/Await)
+3. **セキュリティ:** 入力値チェックおよびルーティング制御
+
+## 💻 開発環境のセットアップ (Getting Started)
+
+リポジトリをクローンし、以下のコマンドでローカルサーバーを起動します。
 
 ```bash
+# 依存ライブラリのインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
